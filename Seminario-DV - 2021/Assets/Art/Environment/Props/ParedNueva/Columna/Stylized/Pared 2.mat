@@ -97,9 +97,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Power: 1
-    - _RimOffset: 0.96
+    - _RimOffset: 0.23
     - _SmoothnessTextureChannel: 0
-    - _SpecSomething: 0
+    - _SpecSomething: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
@@ -111,7 +111,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emmisive: {r: 0, g: 0, b: 0, a: 0}
     - _Movement: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim: {r: 0.7921569, g: 0.72478706, b: 0.26274508, a: 0}
+    - _Rim: {r: 0.77254903, g: 0.68647087, b: 0.13333333, a: 0}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
     - _Tint: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0}
   m_BuildTextureStacks: []
