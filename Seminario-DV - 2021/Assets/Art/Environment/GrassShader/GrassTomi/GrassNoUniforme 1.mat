@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassNoUniforme 1
   m_Shader: {fileID: 4800000, guid: 68e92ee1b0bc35041917c63a54c55a8b, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -31,24 +32,26 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ASEOutlineWidth: 0
     - _ColorChange: -0.31
     - _Cutoff: 0
-    - _EdgeIntensity: 2.86
+    - _EdgeIntensity: 0.88
     - _GrassHeight: 1.48
     - _Mask: 0.762
     - _NoiseIntensity: 0.517
-    - _NoiseScale: 1.04
+    - _NoiseScale: 2.4
     - _TessMax: 40
     - _TessMin: 40
-    - _TessValue: 15
+    - _TessValue: 27.8
     - _Tilling: 3.59
     - _WindIntensity: -0.01
     - _WindMaskHeight: 0.04
     - __dirty: 0
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
-    - _DownColor: {r: 0.972549, g: 0.84313726, b: 0.2509804, a: 0}
-    - _UpColor: {r: 0.92156863, g: 1, b: 0, a: 0}
+    - _DownColor: {r: 1, g: 0.8230088, b: 0, a: 0}
+    - _UpColor: {r: 0.9215686, g: 1, b: 0, a: 0}
     - _WindSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
