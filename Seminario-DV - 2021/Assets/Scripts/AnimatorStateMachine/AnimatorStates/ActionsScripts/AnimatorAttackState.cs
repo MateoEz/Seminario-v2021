@@ -102,7 +102,10 @@ namespace AnimatorStateMachine.AnimatorStates.ActionsScripts
             if (isLastComboState || !_continueCombo)
             {
                 PlayerState.Instance.IsAttacking = false;
-                _entity.Transform.GetComponent<PlayerView>().ResetSpeed();
+                if ((_entity is PlayerView))
+                {
+                    _entity.Transform.GetComponent<PlayerView>().ResetSpeed();
+                }
                 return;
             }
 
