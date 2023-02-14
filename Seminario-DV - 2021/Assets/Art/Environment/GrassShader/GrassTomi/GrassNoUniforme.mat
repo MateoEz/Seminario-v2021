@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrassNoUniforme
+  m_Shader: {fileID: 4800000, guid: 68e92ee1b0bc35041917c63a54c55a8b, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: c21f723a38161ae4e9575b82841ce12b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 2800000, guid: 5670620004339484c8a7a6003c6f117d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ASEOutlineWidth: 0
+    - _ColorChange: -0.31
+    - _Cutoff: 0
+    - _EdgeIntensity: 0.88
+    - _GrassHeight: 1.48
+    - _Mask: 0.762
+    - _NoiseIntensity: 0.517
+    - _NoiseScale: 2.4
+    - _TessMax: 40
+    - _TessMin: 40
+    - _TessValue: 27.8
+    - _Tilling: 3.59
+    - _WindIntensity: -0.01
+    - _WindMaskHeight: 0.04
+    - __dirty: 0
+    m_Colors:
+    - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _DownColor: {r: 1, g: 0.82300884, b: 0, a: 0}
+    - _UpColor: {r: 0.92156863, g: 1, b: 0, a: 0}
+    - _WindSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}

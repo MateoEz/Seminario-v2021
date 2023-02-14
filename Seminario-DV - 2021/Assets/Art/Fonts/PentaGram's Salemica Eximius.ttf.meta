@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 1b0e6b936a4ae364dbc1483e94fa6ca6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: PentaGram?s Salemica Eximius
+  fontNames:
+  - PentaGram?s Salemica Eximius
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a4c29759682efbb40b0bcdaec35ca455, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

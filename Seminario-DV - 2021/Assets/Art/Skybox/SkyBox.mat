@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkyBox
+  m_Shader: {fileID: 4800000, guid: 75814b9940f7395459e8fc6448db7565, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CloudNoise:
+        m_Texture: {fileID: 2800000, guid: fe5fd64e5eb98184daa3501c23afeac6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StarsCubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CloudCoverage: 0.113
+    - _CloudHeight: 0
+    - _CloudHeight3: 0
+    - _CloudHorizonMaskHeightOffset: -0.26
+    - _CloudHorizonMaskSharpness: 0.59
+    - _CloudTimescale: 0
+    - _CoverageGradientHeight: 0
+    - _CoverageGradientSharpness: 0
+    - _HorizonGlowIntensity: 0.59
+    - _HorizonMinAmountAlways: 0
+    - _HorizonSharpness: 5.7
+    - _HorizonSunGlowSpreadMax: 0
+    - _HorizonSunGlowSpreadMin: 1.81
+    - _HorizonTintSunPower: 0
+    - _NightTransitionHorizonDelay: 0
+    - _NightTransitionScale: 1
+    - _SkyGradientPower: 8.34
+    - _SkyGradientScale: 3.89
+    - _StarLayer1Intensity: 0
+    - _StarLayer2Intensity: 0
+    - _StarLayer3Intensity: 0
+    - _SunDiskCloudsTransmissionIntensity: 0
+    - _SunDiskIntensity: 0
+    - _SunDiskSharpness: 0.00824
+    - _SunDiskSize: 0.241
+    - _SunDiskSizeAdjust: 0.005
+    - _UseRadialCoverageMask: 0
+    m_Colors:
+    - _CloudColor: {r: 0.9150943, g: 0.59310937, b: 0.38848343, a: 0.99215686}
+    - _CloudOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudOffset2: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudScroll: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudScroll2: {r: 2, g: 0, b: 0, a: 0}
+    - _CloudScroll3: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudSharpness: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudTiling: {r: 0, g: 0, b: 0, a: 0}
+    - _CoverageGradientOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _HorizonColor: {r: 0.9137255, g: 0.8509804, b: 0.7215686, a: 0.019607844}
+    - _NightColorBottom: {r: 0, g: 0, b: 0, a: 0}
+    - _NightColorTop: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyColorBottom: {r: 0.5518868, g: 0.7153495, b: 1, a: 0}
+    - _SkyColorTop: {r: 0.6273585, g: 0.7577832, b: 1, a: 0}
+    - _StarRotation: {r: 0, g: 0, b: 0, a: 0}
+    - _StarRotationSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _StarSize: {r: 0, g: 0, b: 0, a: 0}
