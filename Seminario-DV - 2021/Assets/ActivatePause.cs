@@ -11,6 +11,8 @@ public class ActivatePause : MonoBehaviour
     [SerializeField]
     GameObject panelMenu;
 
+    [SerializeField] private Button settingsButton;
+
     [SerializeField] private GameConfig _gameConfig;
 
 
@@ -20,6 +22,10 @@ public class ActivatePause : MonoBehaviour
     {
         panelMenu.SetActive(false);
         isActive = false;
+        settingsButton.onClick.AddListener((() =>
+        {
+            panelMenu.SetActive(false);
+        }));
     }
     void Update()
     {
