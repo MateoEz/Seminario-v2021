@@ -43,4 +43,24 @@ public class PowerUpsFeedBack : MonoBehaviour
     {    
       //_gameConfig.Instance.SurroundingBallsCooldown
     }
+    public bool needToReload;
+    private bool imReloading;
+    private float reloadTime;
+
+    public void ReloadSurroundingBalls()
+    {
+        reloadTime = _gameConfig.Instance.SurroundingBallsCooldown;
+
+        if (imReloading) return;
+        RBallsActive.fillAmount = 1;
+        StartCoroutine("FillAmountCorutine");
+    }
+
+    IEnumerable FillAmountCorutine()
+    {
+        imReloading = true;
+        RBallsActive.fillAmount -= Time.deltaTime/100;
+        yield return new WaitForSeconds(reloadTime);
+        imReloading = false;
+    }
 }
