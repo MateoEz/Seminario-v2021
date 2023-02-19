@@ -26,6 +26,7 @@ using UnityEngine.SceneManagement;
         {
 
             fadeIn.GetComponent<Animator>().SetTrigger("fadein");
+            other.gameObject.SetActive(false);
             StartCoroutine("ChangeScene");
         }
     }

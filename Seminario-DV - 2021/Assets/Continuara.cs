@@ -29,6 +29,7 @@ public class Continuara : MonoBehaviour
 
             fadeIn.GetComponent<Animator>().SetTrigger("fadein");
             tobecontinue.gameObject.SetActive(true);
+            other.gameObject.SetActive(false);
             StartCoroutine("ChangeScene");
         }
 
