@@ -14,6 +14,9 @@ namespace AI.Core.StateMachine
         protected List<MyState> _states;
         protected MyStateReader _stateReader;
 
+
+        public int MaxHealth => _maxHealth;
+        public int CurrentHealth => _currentHealth;
         public bool IsDead { get; set; }
         public MisionType CurrentMision => _stateReader.CurrentState().MissionType;
 

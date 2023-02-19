@@ -42,7 +42,7 @@ namespace AI.Enemies.ImplementingStateReader
         private float _lastAttackTime;
         private SquadManager _squad;
         private Vector3 _lastAmbushPositionAssigned;
-
+        
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
@@ -130,8 +130,14 @@ namespace AI.Enemies.ImplementingStateReader
             Debug.LogWarning("GOLEM DIES");
             AudioMaster.Instance.PlayClip("RocasCayendo");
             var instance = Instantiate(_explodeMesh);
+            instance.transform.localScale = transform.localScale;
             instance.transform.position = transform.position;
             instance.transform.rotation = transform.rotation;
+            
+            if (TryGetComponent(out BossBehaviour boss))
+            {
+                FindObjectOfType<BossFightBehaviour>().SetFightStatus(false);
+            }
             _animator.enabled = false;
             //Destroy(gameObject);
             gameObject.SetActive(false);
@@ -367,6 +373,11 @@ namespace AI.Enemies.ImplementingStateReader
             SetWorldState("isStunned", true);
             _animator.SetTrigger("GetHit");
             AudioMaster.Instance.PlayClip("Golpe1");
+
+            if (TryGetComponent(out BossBehaviour boss))
+            {
+                boss.UpdateLifeView();
+            }
             // AudioMaster.Instance.PlayClip("GolemHit");
         }
     }
