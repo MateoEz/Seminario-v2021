@@ -19455,17 +19455,17 @@ PrefabInstance:
     - target: {fileID: 4197581402041234661, guid: 5e542e4bed85cd84daff3f6130095885,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4197581402041234661, guid: 5e542e4bed85cd84daff3f6130095885,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4197581402041234661, guid: 5e542e4bed85cd84daff3f6130095885,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4197581402041234661, guid: 5e542e4bed85cd84daff3f6130095885,
         type: 3}
@@ -50694,6 +50694,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530811546}
   m_Enabled: 1
+--- !u!114 &1530811551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530811546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e21845f31779c4db2173b89e0e3cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPosition: {x: 286, y: 3, z: 132}
 --- !u!1001 &1531407079
 PrefabInstance:
   m_ObjectHideFlags: 0

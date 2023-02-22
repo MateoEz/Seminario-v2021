@@ -9,9 +9,8 @@ public class BossFightBehaviour : MonoBehaviour
     [SerializeField] private GameObject bossLifeContainer;
     [SerializeField] private CameraView cameraView;
     private bool _currentStatus;
-
-
     private float _tick;
+    private const string CHECKPOINT_KEY = "boss_checkpoint";
     private void Update()
     {
         if (_currentStatus)
@@ -42,7 +41,12 @@ public class BossFightBehaviour : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerView>())
         {
             SetFightStatus(true);
+            if (!PlayerPrefs.HasKey(CHECKPOINT_KEY))
+            {
+                PlayerPrefs.SetInt(CHECKPOINT_KEY,1);
+            }
 
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
