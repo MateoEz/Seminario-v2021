@@ -42,6 +42,8 @@ public class PuzzleRosca : MonoBehaviour
     {
         puzzleCompleted = true;
     }
+    [SerializeField] AudioClip slidePuzzleRock;
+    [SerializeField] AudioSource puzzleAudioSource;
     public void Rotate()
     {
         shouldCheckColor = false;
@@ -50,6 +52,10 @@ public class PuzzleRosca : MonoBehaviour
         imRotating = true;
         qTo = transform.rotation;
         qTo = Quaternion.AngleAxis(-60, transform.forward) * transform.rotation;
+        if (slidePuzzleRock)
+        {
+            puzzleAudioSource.PlayOneShot(slidePuzzleRock);
+        }
         transform.rotation = Quaternion.Slerp(transform.rotation, qTo, speed);
         if (transform.rotation == qTo) imRotating = false;
         justPressed = false;

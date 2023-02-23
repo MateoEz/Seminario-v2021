@@ -13,16 +13,18 @@ public class PuzzleRoscaManager : MonoBehaviour
     [SerializeField] PuzzleRosca rosca2;
     [SerializeField] GameObject Cilinder;
     [SerializeField] CableFeedback cables;
+    [SerializeField] AudioClip completed;
+    [SerializeField] AudioSource puzzleAudioSource;
     public int correctAnswers;
     private float waitToWin;
     private bool puzzleCompleted;
     private bool dontCheckAnymore;
     public Material completedPuzzleMaterial;
+    
 
     private void Start()
     {
         particleSand.SetActive(false);
-
     }
     private void Update()
     {
@@ -48,18 +50,20 @@ public class PuzzleRoscaManager : MonoBehaviour
             rosca.PuzzleCompleted();
             rosca1.PuzzleCompleted();
             rosca2.PuzzleCompleted();
+            if (completed)
+            {
+                puzzleAudioSource.PlayOneShot(completed);
+            }
             //columna.moveColumn = true;
             puzzleCompleted = false;
         }       
     }
-
     public void CheckColors()
     {
        
     }
     public void CheckAnswers()
-    {
- 
+    { 
         correctAnswers = 0;
         foreach (var item in answers)
         {
@@ -68,7 +72,6 @@ public class PuzzleRoscaManager : MonoBehaviour
                 correctAnswers++;
             }
         }
-
     }
 
     public IEnumerator StopSand()
