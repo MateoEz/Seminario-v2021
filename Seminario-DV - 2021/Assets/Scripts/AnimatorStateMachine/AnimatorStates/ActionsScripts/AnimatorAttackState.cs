@@ -49,6 +49,12 @@ namespace AnimatorStateMachine.AnimatorStates.ActionsScripts
             return instance;
         }
 
+        private IEnumerable<WaitForSeconds> Test(float time, Action action)
+        {
+            yield return new WaitForSeconds(time);
+            action.Invoke();
+        }
+
         public override void StartState(Animator animator, AnimatorStateInfo stateInfo)
         {
             _entity = GetEntity(animator);
@@ -56,8 +62,18 @@ namespace AnimatorStateMachine.AnimatorStates.ActionsScripts
             _hasActivateCollider = false;
             _hasDisableCollider = false;
             _continueCombo = false;
-            if(!PlayerState.Instance.IsDashing)
-                _entity.CurrentWeapon.Damage = _damage;
+            if (!PlayerState.Instance.IsDashing)
+            {
+                if (_entity.Transform.GetComponent<BossBehaviour>())
+                {
+                    _entity.CurrentWeapon.Damage = _damage * 2;
+                }
+                else
+                {
+                    _entity.CurrentWeapon.Damage = _damage;
+                }
+            }
+               
             _initialTarget = _entity.CurrentTarget;
             if(_entity is PlayerView) AudioMaster.Instance.PlayClip("SwordSlash-1");
             if (_entity is PlayerView) AudioMaster.Instance.PlayClip("Golpe1");
