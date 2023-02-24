@@ -83,6 +83,7 @@ namespace AI.Enemies.ImplementingStateReader.States
 
         public bool IsHitStoppingTheAttack()
         {
+            if (_owner.GetComponent<BossBehaviour>()) return false;
             foreach (var attack in _attackAnimatorStates)
             {
                 if (attack.IsAllreadyCharged())
