@@ -41,15 +41,6 @@ public class AchievementsManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            TrackAchievement("destroy_boxes");
-        }
-    }
-
-
     public void TrackAchievement(string id)
     {
         if (_achievements.achievements.Length == 0) return;
