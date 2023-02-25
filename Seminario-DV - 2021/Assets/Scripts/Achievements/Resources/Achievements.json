@@ -1,0 +1,28 @@
+{
+    "achievements": [
+    {
+      "id": "destroy_boxes",
+      "title": "Destructor de mundos",
+      "description":"Destruir 10 cajas",
+      "completed": false,
+      "progress": 0,
+      "expectedValue" : 10
+    },
+    {
+      "id": "world_cup", 
+      "title": "Salud, campeon!",
+      "description":"Miraste la copa",
+        "completed": false,
+        "progress": 0,
+      "expectedValue" : 1
+      },
+      {
+        "id": "kill_five_enemies",
+        "title": "Asesino",
+        "description":"Matar 5 enemigos",
+        "completed": false,
+        "progress": 0,
+        "expectedValue" : 5
+      }
+    ]
+}

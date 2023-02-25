@@ -34,11 +34,7 @@ public class SettingsMenu : MonoBehaviour
 
 
         _resolutions = Screen.resolutions;
-
-        foreach (var VARIABLE in _resolutions)
-        {
-            Debug.Log(VARIABLE.ToString());
-        }
+        
         
         resolutionDropdown.ClearOptions();
         

@@ -55,6 +55,8 @@ public class CajaRompible : MonoBehaviour, ITarget, IDamageable
         {
             spheres.transform.GetChild(i).GetComponent<Rigidbody>().AddExplosionForce(explosionForce, spheres.transform.position, 10, 1, ForceMode.Force);
         }
+        
+        AchievementsManager.Instance.TrackAchievement("destroy_boxes");
     }
     public Transform GetTransform()
     {
