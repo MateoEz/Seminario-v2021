@@ -372,7 +372,7 @@ namespace AI.Enemies.ImplementingStateReader
             currentState.OnForceQuit();
             SetWorldState("isStunned", true);
             _animator.SetTrigger("GetHit");
-            AudioMaster.Instance.PlayClip("Golpe1");
+            AudioMaster.Instance.PlayClip("GolemHit");
 
             if (TryGetComponent(out BossBehaviour boss))
             {
