@@ -111,7 +111,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emmisive: {r: 0, g: 0, b: 0, a: 0}
     - _Movement: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim: {r: 0.77254903, g: 0.68647087, b: 0.13333333, a: 0}
+    - _Rim: {r: 0.254717, g: 0.23477069, b: 0.10693307, a: 0}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
     - _Tint: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0}
   m_BuildTextureStacks: []
