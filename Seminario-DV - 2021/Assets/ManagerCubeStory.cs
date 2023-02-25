@@ -52,7 +52,14 @@ public class ManagerCubeStory : MonoBehaviour
                 particleECube.gameObject.SetActive(true);
                 if (Input.GetKey(KeyCode.E))
                 {
+                    
+                    
                     start = true;
+                    
+                    if (AchievementsManager.Instance != null)
+                    {
+                        AchievementsManager.Instance.TrackAchievement("history_boxes");
+                    }
                     if (textStory)
                     {
                         //SetActiveStory(PickRandomText());

@@ -2,7 +2,7 @@
     "achievements": [
     {
       "id": "destroy_boxes",
-      "title": "Destructor de mundos",
+      "title": "Empleado del mes",
       "description":"Destruir 10 cajas",
       "completed": false,
       "progress": 0,
@@ -11,18 +11,42 @@
     {
       "id": "world_cup", 
       "title": "Salud, campeon!",
-      "description":"Miraste la copa",
+      "description":"Ahora queremos la cuarta",
         "completed": false,
         "progress": 0,
       "expectedValue" : 1
       },
       {
         "id": "kill_five_enemies",
-        "title": "Asesino",
+        "title": "Destructor de mundos\nAprendiz",
         "description":"Matar 5 enemigos",
         "completed": false,
         "progress": 0,
         "expectedValue" : 5
+      },
+      {
+        "id": "kill_ten_enemies",
+        "title": "Destructor de mundos\nProdigio",
+        "description":"Matar 10 enemigos",
+        "completed": false,
+        "progress": 0,
+        "expectedValue" : 10
+      },
+      {
+        "id": "kill_fifteen_enemies",
+        "title": "Destructor de mundos\nMaestro",
+        "description":"Matar 15 enemigos",
+        "completed": false,
+        "progress": 0,
+        "expectedValue" : 15
+      },
+      {
+        "id": "history_boxes",
+        "title": "Historiador",
+        "description":"Interactuar con 3 cofres del recuerdo",
+        "completed": false,
+        "progress": 0,
+        "expectedValue" : 3
       }
     ]
 }

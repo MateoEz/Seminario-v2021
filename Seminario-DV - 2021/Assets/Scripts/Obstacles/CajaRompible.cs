@@ -44,8 +44,12 @@ public class CajaRompible : MonoBehaviour, ITarget, IDamageable
             Rigidbody rb = part.GetComponent<Rigidbody>();
             rb.AddExplosionForce(explosionForce, transform.position, 10,1, ForceMode.Force);
         }
-        
-        AchievementsManager.Instance.TrackAchievement("destroy_boxes");
+
+        if (AchievementsManager.Instance != null)
+        {
+            AchievementsManager.Instance.TrackAchievement("destroy_boxes");
+        }
+       
     }
 
     void InstantiateSpheres()

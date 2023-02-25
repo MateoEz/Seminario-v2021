@@ -138,7 +138,12 @@ namespace AI.Enemies.ImplementingStateReader
             {
                 FindObjectOfType<BossFightBehaviour>().SetFightStatus(false);
             }
-            AchievementsManager.Instance.TrackAchievement("kill_five_enemies");
+            if (AchievementsManager.Instance != null)
+            {
+               AchievementsManager.Instance.TrackAchievement("kill_five_enemies");
+               AchievementsManager.Instance.TrackAchievement("kill_ten_enemies");
+               AchievementsManager.Instance.TrackAchievement("kill_fifteen_enemies");
+            }
             _animator.enabled = false;
             //Destroy(gameObject);
             gameObject.SetActive(false);
