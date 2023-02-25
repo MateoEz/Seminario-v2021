@@ -6,6 +6,9 @@ public class ManagerText : MonoBehaviour
 {
     [SerializeField]
     GameObject[] textsArray;
+
+    [SerializeField] private AudioClip[] narrativeClips;
+    [SerializeField] private AudioSource audioSource;
     int currentIndex;
     bool goToNext;
     public float timeToChangeText;
@@ -15,6 +18,8 @@ public class ManagerText : MonoBehaviour
         currentIndex = 0;
         tick = 0;
     }
+
+    private bool flag;
     private void Update()
     {
         if (currentIndex > 2) return;
@@ -24,6 +29,11 @@ public class ManagerText : MonoBehaviour
         if (tick >= 2f && currentIndex == 0)
         {
             textsArray[0].gameObject.SetActive(true);
+            if (!flag)
+            {
+                audioSource.PlayOneShot(narrativeClips[0]);
+                flag = true;
+            }
         }
         if (tick >= timeToChangeText)
         {
@@ -38,6 +48,7 @@ public class ManagerText : MonoBehaviour
             {
                 textsArray[currentIndex - 1].gameObject.SetActive(false);
                 textsArray[currentIndex].gameObject.SetActive(true);
+                audioSource.PlayOneShot(narrativeClips[currentIndex]);
                 tick = 0;
                 goToNext = false;
             }
