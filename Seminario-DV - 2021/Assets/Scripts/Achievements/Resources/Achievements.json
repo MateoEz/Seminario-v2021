@@ -19,7 +19,7 @@
       {
         "id": "kill_five_enemies",
         "title": "Destructor de mundos\nAprendiz",
-        "description":"Matar 5 enemigos",
+        "description":"Eliminar 5 enemigos",
         "completed": false,
         "progress": 0,
         "expectedValue" : 5
@@ -27,7 +27,7 @@
       {
         "id": "kill_ten_enemies",
         "title": "Destructor de mundos\nProdigio",
-        "description":"Matar 10 enemigos",
+        "description":"Eliminar 10 enemigos",
         "completed": false,
         "progress": 0,
         "expectedValue" : 10
@@ -35,7 +35,7 @@
       {
         "id": "kill_fifteen_enemies",
         "title": "Destructor de mundos\nMaestro",
-        "description":"Matar 15 enemigos",
+        "description":"Eliminar 15 enemigos",
         "completed": false,
         "progress": 0,
         "expectedValue" : 15

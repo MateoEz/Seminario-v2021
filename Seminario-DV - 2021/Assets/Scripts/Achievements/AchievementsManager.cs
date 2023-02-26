@@ -34,11 +34,6 @@ public class AchievementsManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        foreach (var VARIABLE in _achievements.achievements)
-        {
-            Debug.Log(VARIABLE.title);
-        }
     }
 
     public void TrackAchievement(string id)
