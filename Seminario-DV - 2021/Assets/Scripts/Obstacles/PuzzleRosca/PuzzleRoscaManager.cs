@@ -52,7 +52,7 @@ public class PuzzleRoscaManager : MonoBehaviour
             rosca2.PuzzleCompleted();
             if (completed)
             {
-                puzzleAudioSource.PlayOneShot(completed);
+                puzzleAudioSource.PlayOneShot(completed,.9f);
             }
             //columna.moveColumn = true;
             puzzleCompleted = false;

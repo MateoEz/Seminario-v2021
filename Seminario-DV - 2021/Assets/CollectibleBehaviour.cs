@@ -8,6 +8,9 @@ public class CollectibleBehaviour : MonoBehaviour
     [SerializeField] private GameObject gameObjectToDeactivate;
     [SerializeField] private GameObject particle;
 
+    [SerializeField] private AudioSource myAudioSource;
+    [SerializeField] private AudioClip myAudioClip;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.TryGetComponent(out PlayerView playerView) ||
@@ -46,7 +49,7 @@ public class CollectibleBehaviour : MonoBehaviour
         {
             AchievementsManager.Instance.TrackAchievement("collectible");
         }
-        
+        myAudioSource.PlayOneShot(myAudioClip, .3f);
         FindObjectOfType<CollectibleHandler>().OnGrabbed();
 
     }

@@ -11,6 +11,11 @@ public class ManagerCubeStory : MonoBehaviour
      List<Image> story = new List<Image>();
      List<Image> alreadyShown = new List<Image>();
     [SerializeField] GameObject textStory;
+
+    [SerializeField] AudioClip soundClip;
+    [SerializeField] AudioSource myAS;
+
+
     bool start;
     int count;
     void Start()
@@ -63,7 +68,7 @@ public class ManagerCubeStory : MonoBehaviour
                     if (textStory)
                     {
                         //SetActiveStory(PickRandomText());
-                        
+                        myAS.PlayOneShot(soundClip,0.3f);
                         textStory.gameObject.SetActive(true);
                         if (narrativeClip)
                         {

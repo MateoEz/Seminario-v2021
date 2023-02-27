@@ -33,5 +33,25 @@ public class CollectibleHandler : MonoBehaviour
     private void Show()
     {
         collectiblesContainer.SetActive(true);
+        StartCoroutine("HideCollectible");
+    }
+
+    IEnumerator HideCollectible()
+    {
+
+        yield return new WaitForSeconds(4f);
+        SetTriggerToFadeOut();
+        yield return new WaitForSeconds(3f);
+        Hide();
+    }
+
+    private void SetTriggerToFadeOut()
+    {
+        collectiblesContainer.GetComponent<Animator>().SetTrigger("Hide");        
+    }
+
+    private void Hide()
+    {
+        collectiblesContainer.SetActive(false);
     }
 }

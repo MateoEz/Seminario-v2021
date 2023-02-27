@@ -18,11 +18,11 @@ MonoBehaviour:
     value: 1
   spectralLut:
     overrideState: 1
-    value: {fileID: 0}
+    value: {fileID: 2800000, guid: 70312216624251546a76068020300621, type: 3}
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.183
+    value: 0.167
   fastMode:
     overrideState: 0
     value: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 12
+    value: 74.1
   threshold:
     overrideState: 1
     value: 1.12
@@ -62,7 +62,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 0.82200605, b: 0.504717, a: 1}
+    value: {r: 0.14958464, g: 0.07237451, b: 0.3584906, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.5
+    value: 0.375
   smoothness:
     overrideState: 1
     value: 0.899
@@ -210,7 +210,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 30
+    value: -12
   brightness:
     overrideState: 0
     value: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
     value: -0.2
   contrast:
     overrideState: 1
-    value: -30
+    value: -48
   mixerRedOutRedIn:
     overrideState: 0
     value: 100

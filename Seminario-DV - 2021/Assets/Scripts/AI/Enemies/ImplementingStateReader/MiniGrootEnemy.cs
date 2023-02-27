@@ -46,6 +46,8 @@ namespace AI.Enemies.ImplementingStateReader
         private SpellCooldownManager _spellsCooldownManager;
         private SquadManager _squad;
 
+        [SerializeField] AudioSource myAudioSource;
+
         public Transform GetTransform()
         {
             if(this)
@@ -157,13 +159,12 @@ namespace AI.Enemies.ImplementingStateReader
             else
                 SetWorldState("isSpellInCooldown", false);
         }
-
+        [SerializeField] AudioClip hitSound;
         public override void GetDamaged(int damaged)
         {
             base.GetDamaged(damaged);
-            AudioMaster.Instance.PlayClip("Golpe1");
-            //AudioMaster.Instance.PlayClip("GolemHit");
-            
+            //AudioMaster.Instance.PlayClip("GrootHit"); 
+            myAudioSource.PlayOneShot(hitSound, 1);
         }
 
         protected override void Die()

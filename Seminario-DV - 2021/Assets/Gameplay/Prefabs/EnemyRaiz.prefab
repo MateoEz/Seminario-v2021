@@ -975,6 +975,8 @@ MonoBehaviour:
   - {fileID: 771096555}
   eye1: {fileID: 2040728974122852198}
   eye2: {fileID: 2977278854465793599}
+  myAudioSource: {fileID: 5402253316705632306}
+  hitSound: {fileID: 8300000, guid: dbf14c1a0a9bbec4bbbfb09f40e39c3e, type: 3}
 --- !u!82 &5402253316705632306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -996,7 +998,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
-  MinDistance: 4
+  MinDistance: 1
   MaxDistance: 6
   Pan2D: 0
   rolloffMode: 1

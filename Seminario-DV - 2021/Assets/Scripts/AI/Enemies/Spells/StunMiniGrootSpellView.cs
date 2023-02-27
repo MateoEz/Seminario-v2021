@@ -12,6 +12,8 @@ namespace AI.Enemies.Spells
         [SerializeField] private Animator _animator;
         private float _timeStunned;
 
+        [SerializeField] AudioSource aS;
+        [SerializeField] AudioClip soundClip;
         public void Init(float timeStunned)
         {
             _timeStunned = timeStunned;
@@ -26,6 +28,7 @@ namespace AI.Enemies.Spells
         {
             gameObject.SetActive(true);
             _animator.SetTrigger("Active");
+            aS.PlayOneShot(soundClip, .4f);
             DisactiveAfterStunnedTime()
                 .Subscribe();
         }

@@ -39,11 +39,15 @@ public class Torreta : MonoBehaviour
     [SerializeField]
     private float explosionForce;
 
+    [SerializeField] AudioClip loadingAudio;
+    [SerializeField] AudioClip shootingAudio;
+    [SerializeField] AudioSource myAudioSource;
     public static bool activated;
     public bool shooting;
     public bool dead;
     private float myTime;
     public bool reloading;
+    bool soundCharging;
     private void Start()
     {
         activated = false;
@@ -71,14 +75,24 @@ public class Torreta : MonoBehaviour
         particleTorret.SetActive(true);
         particleTorret2.SetActive(true);
         myTime += Time.deltaTime;
+        ChargeSound();
         if (myTime >= timeToSpawn)
         {
+            reloading = false;
+            soundCharging = false;
             myTime = 0;        
             Spawn();
         }
     }
+    private void ChargeSound()
+    {
+        if (soundCharging) return;
+        soundCharging = true;
+        myAudioSource.PlayOneShot(loadingAudio);
+    }
     public void Spawn()
     {
+        myAudioSource.PlayOneShot(shootingAudio);
         var bullet = Instantiate(circleBullet);
         bullet.transform.GetComponent<TorretaBullet>().SetOwner(transform);
         bullet.transform.position = spawnPoint.transform.position;
