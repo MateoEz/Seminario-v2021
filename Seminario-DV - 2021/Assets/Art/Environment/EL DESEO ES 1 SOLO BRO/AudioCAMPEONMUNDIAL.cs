@@ -21,6 +21,10 @@ public class AudioCAMPEONMUNDIAL : MonoBehaviour
             audioSong.gameObject.SetActive(false);
             audioWorldChampion.gameObject.SetActive(true);
             particle1.SetActive(true);
+            if (AchievementsManager.Instance != null)
+            {
+                AchievementsManager.Instance.TrackAchievement("world_cup");
+            }
         }
     }
     private void OnTriggerExit(Collider other)

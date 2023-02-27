@@ -5,28 +5,24 @@ using UnityEngine;
 public class PortalTrigger : MonoBehaviour
 {
 
-
-
-    private GameObject player;
-
+    
     [SerializeField]
     private GameObject exit;
-
-    void Teleport()
-    {
-        player.transform.position = exit.transform.position;
-        player.transform.rotation = exit.transform.rotation;
-    }
-
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerView>())
+        if (other.gameObject.GetComponent<PlayerView>() && !other.gameObject.GetComponent<DashPlayerFeedback>())
         {
-            player = other.gameObject;
-            Teleport();
-
+            other.gameObject.SetActive(false);
+            StartCoroutine(MovePlayerCoroutine(other.gameObject));
         }
+    }
+
+    private IEnumerator MovePlayerCoroutine(GameObject player)
+    {
+        yield return new WaitForSeconds(0.5f);
+        player.transform.position = exit.transform.position;
+        yield return new WaitForSeconds(0.5f);
+        player.SetActive(true);
     }
 }
