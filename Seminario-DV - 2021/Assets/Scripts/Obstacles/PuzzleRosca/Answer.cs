@@ -14,7 +14,6 @@ public class Answer : MonoBehaviour
        RaycastHit hit;       
         if (Physics.Raycast(transform.position,transform.forward,out hit, distanceLimit))
         {
-            Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.GetComponent<PuzzleRoscaManager>() != null)
             {
                 correctAnswer = true;

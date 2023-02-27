@@ -26,7 +26,6 @@ public class SettingsMenu : MonoBehaviour
         
         qualityDropdown.ClearOptions();
         qualityDropdown.AddOptions(QualitySettings.names.ToList());
-        Debug.Log(QualitySettings.GetQualityLevel());
         qualityDropdown.value = QualitySettings.GetQualityLevel();
         
 
