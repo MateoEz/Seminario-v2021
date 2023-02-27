@@ -13,16 +13,7 @@ public class PortalTrigger : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerView>() && !other.gameObject.GetComponent<DashPlayerFeedback>())
         {
-            other.gameObject.SetActive(false);
-            StartCoroutine(MovePlayerCoroutine(other.gameObject));
+            other.transform.position = exit.transform.position;
         }
-    }
-
-    private IEnumerator MovePlayerCoroutine(GameObject player)
-    {
-        yield return new WaitForSeconds(0.5f);
-        player.transform.position = exit.transform.position;
-        yield return new WaitForSeconds(0.5f);
-        player.SetActive(true);
     }
 }
