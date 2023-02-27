@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ASEOutlineWidth: 0.0001
-    - _Emission: 0
+    - _Emission: 1.71
     - _IntesitySpec: 0
     - _Power: 0.682
     - _RimOffset: 0
@@ -51,7 +51,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _ASEOutlineColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0}
-    - _Emmisive: {r: 0, g: 0, b: 0, a: 0}
+    - _Emmisive: {r: 0.14509805, g: 0.08431373, b: 0.24117647, a: 0}
     - _Movement: {r: 0, g: 0, b: 0, a: 0}
     - _Rim: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
