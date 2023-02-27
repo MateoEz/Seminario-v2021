@@ -47,6 +47,14 @@
         "completed": false,
         "progress": 0,
         "expectedValue" : 3
+      },
+      {
+        "id": "collectible",
+        "title": "Coleccionista",
+        "description":"Conseguir 4 gemas coleccionables",
+        "completed": false,
+        "progress": 0,
+        "expectedValue" : 4
       }
     ]
 }
