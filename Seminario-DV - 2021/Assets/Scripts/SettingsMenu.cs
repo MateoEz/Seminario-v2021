@@ -15,6 +15,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Toggle fullScreenToggle;
     [SerializeField] private Dropdown resolutionDropdown;
     [SerializeField] private Button backButton;
+    [SerializeField] private Toggle vSyncToggle;
 
     private Resolution[] _resolutions;
     public void Init()
@@ -54,6 +55,15 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+
+        vSyncToggle.isOn = QualitySettings.vSyncCount == 1;
+        vSyncToggle.onValueChanged.AddListener((status) =>
+        { 
+            QualitySettings.vSyncCount = status ? 1 : 0;
+            vSyncToggle.SetIsOnWithoutNotify(status);
+            Debug.Log(QualitySettings.vSyncCount);
+        });
     }
 
     public void SetVolume(float volume)
