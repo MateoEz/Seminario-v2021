@@ -51,6 +51,8 @@ public class AchievementsManager : MonoBehaviour
                 if (achievement.progress >= achievement.expectedValue)
                 {
                     achievement.completed = true;
+                    
+                    AudioMaster.Instance.PlayClip("LOGRO");
                     FindObjectOfType<AchievementPopup>().Setup(achievement.title, achievement.description);
                 }
             }
