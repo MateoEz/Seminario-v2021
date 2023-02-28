@@ -5607,7 +5607,7 @@ MonoBehaviour:
   _speed: 8
   _attackRange: 6
   _distanceToChase: 30
-  _attackCooldown: 2
+  _attackCooldown: 1
   statesInfo:
   - target
   - inAttackRange
