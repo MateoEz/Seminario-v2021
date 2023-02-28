@@ -128,7 +128,7 @@ namespace AI.Enemies.ImplementingStateReader
         {
             base.Die();
             Debug.LogWarning("GOLEM DIES");
-            AudioMaster.Instance.PlayClip("RocasCayendo");
+            AudioMaster.Instance.PlayClip("RocasCayendo",0.3f);
             var instance = Instantiate(_explodeMesh);
             instance.transform.localScale = transform.localScale;
             instance.transform.position = transform.position;

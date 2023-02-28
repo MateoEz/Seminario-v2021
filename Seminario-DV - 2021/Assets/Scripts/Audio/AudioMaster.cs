@@ -34,6 +34,16 @@ public class AudioMaster
         DestroySourceAfterClipFinish(_audioSource).Subscribe();
     }
     
+    public void PlayClip(string clipName, float volume)
+    {
+        var clip = Resources.Load<AudioClip>(path + clipName);
+        _audioSource = _audioService.CreateSource();
+        _audioSource.volume = volume;
+        _audioSource.clip = clip;
+        _audioSource.Play();
+        DestroySourceAfterClipFinish(_audioSource).Subscribe();
+    }
+    
     public void PlayClip(AudioClip audioClip)
     {
         var source = _audioService.CreateSource();
