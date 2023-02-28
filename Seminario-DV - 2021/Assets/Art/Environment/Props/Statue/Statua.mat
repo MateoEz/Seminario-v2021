@@ -109,5 +109,5 @@ Material:
     - _Movement: {r: 0, g: 0, b: 0, a: 0}
     - _Rim: {r: 0.41390175, g: 0.5583189, b: 0.6509434, a: 0}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Tint: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+    - _Tint: {r: 0.7830189, g: 0.5712933, b: 0.40185118, a: 0}
   m_BuildTextureStacks: []
