@@ -88,11 +88,11 @@ public class Torreta : MonoBehaviour
     {
         if (soundCharging) return;
         soundCharging = true;
-        myAudioSource.PlayOneShot(loadingAudio);
+        myAudioSource.PlayOneShot(loadingAudio,.6f);
     }
     public void Spawn()
     {
-        myAudioSource.PlayOneShot(shootingAudio);
+        myAudioSource.PlayOneShot(shootingAudio,.6f);
         var bullet = Instantiate(circleBullet);
         bullet.transform.GetComponent<TorretaBullet>().SetOwner(transform);
         bullet.transform.position = spawnPoint.transform.position;
