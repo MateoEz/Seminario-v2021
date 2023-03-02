@@ -15,6 +15,7 @@ public class MainSongFade : MonoBehaviour
 
     private float _squadsCounter = 0;
     public bool InCreepyZone { get; set; }
+    public bool BossFighting { get; set; }
     private void Start()
     {
         _mainSongAudioSource = GetComponent<AudioSource>();
@@ -65,6 +66,7 @@ public class MainSongFade : MonoBehaviour
         else
         {
 
+            if (BossFighting) return;
             if (_squadsCounter > 1)
             {
                 _squadsCounter--;
