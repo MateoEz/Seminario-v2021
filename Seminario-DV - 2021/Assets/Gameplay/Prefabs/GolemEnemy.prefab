@@ -5153,7 +5153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _maxHealth: 200
-  _speed: 8
+  _speed: 5
   _attackRange: 3
   _distanceToChase: 10
   _attackCooldown: 2

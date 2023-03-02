@@ -41,6 +41,13 @@ public class SquadManager : MonoBehaviour
     {
         _forceUnlock = false;
         _squadMembers = _squadMembers.Where(member => member != null &&  member.gameObject.activeSelf).ToList();
+
+        if (_squadMembers.Count == 0 && Status)
+        {
+            Debug.Log("entre aca porque no hay squad");
+            FindObjectOfType<MainSongFade>().SetFightStatus(false);
+            Status = false;
+        }
         // recorrer las misiones en orden de prioridad
         foreach (var misions in _squadMisions)
         {
@@ -114,12 +121,16 @@ public class SquadManager : MonoBehaviour
         SetAmbushers();
     }
 
+    public bool Status { get; set; }
     public void NotifySquadMembers(string key, object value)
     {
         foreach (var member in _squadMembers)
         {
             member.SetWorldState(key, value);
         }
+        if (Status) return;
+        FindObjectOfType<MainSongFade>().SetFightStatus(true);
+        Status = true;
     }
 
     public List<BaseEnemyWithStateReader> GetActiveSquadMembers()

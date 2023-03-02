@@ -9,9 +9,12 @@ public class MainSongFade : MonoBehaviour
 {
     [SerializeField] private float fadeInSeconds;
     [SerializeField] private float fadeOutSeconds;
+    [SerializeField] private float fightPitch;
     private AudioSource _mainSongAudioSource;
     private float _initialVolume;
 
+    
+    public bool InCreepyZone { get; set; }
     private void Start()
     {
         _mainSongAudioSource = GetComponent<AudioSource>();
@@ -20,20 +23,57 @@ public class MainSongFade : MonoBehaviour
         FadeAudio(false);
     }
 
-    public void FadeAudio(bool fadeIn)
+    public void FadeAudio(bool fadeIn, float seconds = 0,Action onCompleted = null)
     {
         if (fadeIn)
         {
-            Tween(_mainSongAudioSource.volume, 0, fadeInSeconds).Subscribe(x =>
+            Tween(_mainSongAudioSource.volume, 0, seconds != 0 ? seconds : fadeInSeconds).DoOnCompleted(()=> onCompleted?.Invoke()).Subscribe(x =>
             {
                 _mainSongAudioSource.volume = x;
             });
         }
         else
         {
-            Tween(0, _initialVolume, fadeOutSeconds).Subscribe(x =>
+            Tween(0, _initialVolume, seconds != 0 ? seconds : fadeOutSeconds).DoOnCompleted(()=> onCompleted?.Invoke()).Subscribe(x =>
             {
                 _mainSongAudioSource.volume = x;
+            });
+        }
+    }
+
+    private bool _flag = false;
+    public void SetFightStatus(bool status)
+    {
+        if (InCreepyZone) return;
+        if (status)
+        {
+            if (_flag) return; 
+            _flag = true;
+            FadeAudio(true, 1, () =>
+            {
+                Tween(_mainSongAudioSource.pitch, fightPitch, 1).DoOnCompleted(()=>
+                {
+                    FadeAudio(false,1);
+                }).Subscribe(x =>
+                {
+                    _mainSongAudioSource.pitch = x;
+                });
+            });
+        }
+        else
+        {
+            if (!_flag) return;
+            _flag = false;
+            
+            FadeAudio(true, 1, () =>
+            {
+                Tween(_mainSongAudioSource.pitch, 1, 2).DoOnCompleted(()=>
+                {
+                    FadeAudio(false,2);
+                }).Subscribe(x =>
+                {
+                    _mainSongAudioSource.pitch = x;
+                });
             });
         }
     }

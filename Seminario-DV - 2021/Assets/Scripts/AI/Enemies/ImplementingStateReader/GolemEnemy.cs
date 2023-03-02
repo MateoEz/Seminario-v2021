@@ -77,6 +77,7 @@ namespace AI.Enemies.ImplementingStateReader
         }
 
 
+        private bool _status = false;
         public override void Update()
         {
             base.Update();
@@ -109,11 +110,25 @@ namespace AI.Enemies.ImplementingStateReader
 
             if (Physics.OverlapSphere(transform.position, _distanceToChase, _playerLayer).Any())
             {
+                if (!_status)
+                {
+                    _status = true;
+                    _squad.Status = false;
+                }
                 if(_squad)
                     _squad.NotifySquadMembers("target", PlayerState.Instance.Transform);
                 else
                     SetWorldState("target", PlayerState.Instance.Transform);
                 return;
+            }
+            else
+            {
+                if (_status)
+                {
+                    Debug.Log("entre aca porque no esta en rango");
+                    FindObjectOfType<MainSongFade>().SetFightStatus(false);
+                    _status = false;
+                }
             }
 
             SetWorldState("target", null);

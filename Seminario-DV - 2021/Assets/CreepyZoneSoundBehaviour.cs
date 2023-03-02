@@ -16,6 +16,7 @@ public class CreepyZoneSoundBehaviour : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerView playerView)|| other.TryGetComponent(out DashPlayerFeedback dashPlayerFeedback))
         {
+            FindObjectOfType<MainSongFade>().InCreepyZone = true;
             if (mainAudioSource.pitch < 1f) return;
             Tween(mainAudioSource.pitch, creepyPitch, seconds).Subscribe(x =>
             {
@@ -24,9 +25,10 @@ public class CreepyZoneSoundBehaviour : MonoBehaviour
         }
     }
     private void OnTriggerExit(Collider other)
-    {
+    { ;
         if (other.TryGetComponent(out PlayerView playerView)|| other.TryGetComponent(out DashPlayerFeedback dashPlayerFeedback))
         {
+            FindObjectOfType<MainSongFade>().InCreepyZone = false;
             if (mainAudioSource.pitch > creepyPitch) return;
             Tween(mainAudioSource.pitch, 1, seconds).Subscribe(x =>
             {
