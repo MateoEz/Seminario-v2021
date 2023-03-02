@@ -20,11 +20,15 @@ namespace Domain.Services
             //_nearestAmbusher = ambushers.OrderBy(ambusher => Vector3.Distance(target.position, ambusher.GetCurrentPosition())).First();
             _target = target;
         }
-        
+
+
+        private bool _alreadyReset = false;
         public Vector3 AmbushPositionOf(IAmbusher ambusher)
         {
-            if (_ambushers.Count <= 1) 
+            if (_ambushers.Count <= 1 && !_alreadyReset) 
             {
+                ambusher.ResetAnimation();
+                _alreadyReset = true;
                 throw new Exception("Estan intentando ambushear menos de 1");
             }
 

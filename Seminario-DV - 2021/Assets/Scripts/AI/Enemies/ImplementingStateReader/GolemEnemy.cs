@@ -372,6 +372,12 @@ namespace AI.Enemies.ImplementingStateReader
             _squad = squad;
         }
 
+        public void ResetAnimation()
+        {
+            _animator.SetTrigger("Idle");
+            _animator.SetBool("IsMoving", false);
+        }
+
         public Vector3 GetAmbushPosition()
         {
             return _squad.GetAmbushPosition(this);
