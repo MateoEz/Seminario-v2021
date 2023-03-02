@@ -9,6 +9,7 @@ using Domain;
 using MyUtilities;
 using Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AI.Enemies.ImplementingStateReader
 {
@@ -164,12 +165,18 @@ namespace AI.Enemies.ImplementingStateReader
         {
             base.GetDamaged(damaged);
             //AudioMaster.Instance.PlayClip("GrootHit"); 
-            myAudioSource.PlayOneShot(hitSound, 1);
+            
+            float random = Random.Range(0.02f, 0.08f);
+            AudioMaster.Instance.PlayClip("HitDummy",random,0.6f);
+            //myAudioSource.PlayOneShot(hitSound, 1);
         }
 
         protected override void Die()
         {
             base.Die();
+            
+            
+            Destroy(GetComponent<AudioSource>());
             IsDead = true;
             var stunSpell = _stunSpell as StunMiniGrootSpell;
             ChangeEyes();

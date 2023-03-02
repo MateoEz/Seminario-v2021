@@ -14,6 +14,7 @@ public class PortalTrigger : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out PlayerView playerView) && !other.gameObject.GetComponent<DashPlayerFeedback>())
         {
+            AudioMaster.Instance.PlayClip("SonidoPortalCorto",0.3f);
             StartCoroutine(OnEnterPortalCoroutine(playerView));
 
         }

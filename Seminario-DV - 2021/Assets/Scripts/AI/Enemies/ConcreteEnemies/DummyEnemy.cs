@@ -1,6 +1,7 @@
 ﻿using System;
 using Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemies
 {
@@ -13,6 +14,8 @@ namespace Enemies
 
         public void GetDamaged(int damage)
         {
+            float random = Random.Range(0.02f, 0.08f);
+            AudioMaster.Instance.PlayClip("HitDummy",random,0.6f);
             Debug.Log("Damage received: " + damage);
         }
 

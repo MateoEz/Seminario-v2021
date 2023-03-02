@@ -28,7 +28,7 @@ namespace AI.Enemies.Spells
         {
             gameObject.SetActive(true);
             _animator.SetTrigger("Active");
-            aS.PlayOneShot(soundClip, .4f);
+            aS.PlayOneShot(soundClip, .2f);
             DisactiveAfterStunnedTime()
                 .Subscribe();
         }

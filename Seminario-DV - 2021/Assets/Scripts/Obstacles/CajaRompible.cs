@@ -84,6 +84,7 @@ public class CajaRompible : MonoBehaviour, ITarget, IDamageable
 
     public void GetDamaged(int damage)
     {
+        AudioMaster.Instance.PlayClip("SwordHitWood",0.1f);
         life -= 20;
         if (life <= 0) ChangeBoxes();
     }

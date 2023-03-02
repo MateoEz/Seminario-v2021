@@ -188,7 +188,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
         var random = Random.Range(0, 2);
         if (random == 1)
         {
-            AudioMaster.Instance.PlayClip("SaltoPersonaje");
+            AudioMaster.Instance.PlayClip("SaltoPersonaje",0.2f);
         }
         else return;
     }
@@ -373,6 +373,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
     
     private void EnterDash()
     {
+        AudioMaster.Instance.PlayClip("DashStart",0.15f);
         foreach (var obj in _objectsToTurnDownOnDash)
         {
             obj.SetActive(false);
@@ -398,6 +399,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
     private void FinishDash()
     {
+        AudioMaster.Instance.PlayClip("DashFinish",0.15f);
         foreach (var obj in _objectsToTurnDownOnDash)
         {
             obj.SetActive(true);

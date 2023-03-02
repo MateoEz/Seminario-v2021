@@ -6,6 +6,7 @@ using MyUtilities;
 using Player;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AnimatorStateMachine.AnimatorStates.ActionsScripts
 {
@@ -59,8 +60,14 @@ namespace AnimatorStateMachine.AnimatorStates.ActionsScripts
             if(!PlayerState.Instance.IsDashing)
                 _entity.CurrentWeapon.Damage = _damage;
             _initialTarget = _entity.CurrentTarget;
-            if(_entity is PlayerView) AudioMaster.Instance.PlayClip("SwordSlash-1");
-            if (_entity is PlayerView) AudioMaster.Instance.PlayClip("Golpe1");
+            if (_entity is PlayerView)
+            {
+                float random = Random.Range(0.1f, 0.2f);
+                AudioMaster.Instance.PlayClip("SwordSwoosh",random);
+                
+                float randomHit = Random.Range(0.1f, 0.2f);
+                AudioMaster.Instance.PlayClip("Golpe1",randomHit);
+            }
         }
 
         public override void UpdateState(Animator animator, AnimatorStateInfo stateInfo)

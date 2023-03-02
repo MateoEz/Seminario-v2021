@@ -149,7 +149,7 @@ namespace AI.Enemies.ImplementingStateReader
         {
             base.Die();
             Debug.LogWarning("GOLEM DIES");
-            AudioMaster.Instance.PlayClip("RocasCayendo",0.3f);
+            AudioMaster.Instance.PlayClip("RocasCayendo",0.14f);
             var instance = Instantiate(_explodeMesh);
             instance.transform.localScale = transform.localScale;
             instance.transform.position = transform.position;
@@ -399,6 +399,7 @@ namespace AI.Enemies.ImplementingStateReader
             currentState.OnForceQuit();
             SetWorldState("isStunned", true);
             _animator.SetTrigger("GetHit");
+            AudioMaster.Instance.PlayClip("SwordHitStone",0.04f);
             AudioMaster.Instance.PlayClip("GolemHit");
 
             if (TryGetComponent(out BossBehaviour boss))
