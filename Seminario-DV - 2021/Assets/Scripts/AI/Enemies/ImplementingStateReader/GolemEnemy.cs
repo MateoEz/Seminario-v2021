@@ -129,7 +129,11 @@ namespace AI.Enemies.ImplementingStateReader
                     Debug.Log("entre aca porque no esta en rango");
                     FindObjectOfType<MainSongFade>().SetFightStatus(false);
                     _status = false;
-                    _squad.Status = false;
+
+                    if (_squad)
+                    {
+                        _squad.Status = false;
+                    }
                 }
             }
 

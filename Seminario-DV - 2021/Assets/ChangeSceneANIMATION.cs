@@ -14,6 +14,8 @@ public class ChangeSceneANIMATION : MonoBehaviour
     public float timeToActivateLight;
 
     public GameObject fadeIn;
+
+    private bool _portalAudioPlayed = false;
     void Update()
     {
         timer += Time.deltaTime;
@@ -25,8 +27,14 @@ public class ChangeSceneANIMATION : MonoBehaviour
         }
 
         if (timer >= timeToActivateLight)
-
-        light.intensity += Time.deltaTime * multiply;
+        {
+            light.intensity += Time.deltaTime * multiply;
+            if (!_portalAudioPlayed)
+            {
+                AudioMaster.Instance.PlayClip("animationPortal",0.3f);
+                _portalAudioPlayed = true;
+            }
+        }
 
 
 

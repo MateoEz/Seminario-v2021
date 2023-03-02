@@ -16,6 +16,7 @@ public class CameraDoorManager : MonoBehaviour
     private bool goForward = false;
     private bool playerGoForward = false;
     
+
     private void Update()
     {
         if (goForward)
@@ -32,6 +33,7 @@ public class CameraDoorManager : MonoBehaviour
     public void StartAnimation()
     {
         _playerView.gameObject.GetComponent<Animator>().runtimeAnimatorController = GetComponent<Animator>().runtimeAnimatorController;
+        _playerView.SetFootsteps(false);
         _playerView.enabled = false;
         GetComponent<Camera>().enabled = true;
         OnDoorOpened.Invoke();

@@ -9,17 +9,6 @@ public class Continuara : MonoBehaviour
 
     public GameObject tobecontinue;
     public GameObject fadeIn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +16,9 @@ public class Continuara : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerView>() || other.gameObject.GetComponent<DashPlayerFeedback>())
         {
 
+            FindObjectOfType<MainSongFade>().FadeAudio(true);
+            FindObjectOfType<CameraView>().gameObject.AddComponent<AudioListener>();
+            AudioMaster.Instance.PlayClip("animationPortal",0.3f);
             fadeIn.GetComponent<Animator>().SetTrigger("fadein");
             tobecontinue.gameObject.SetActive(true);
             other.gameObject.SetActive(false);
@@ -38,8 +30,10 @@ public class Continuara : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
+        
         yield return new WaitForSeconds(4f);
-
+        PlayerPrefs.DeleteKey("boss_checkpoint");
+        Destroy(FindObjectOfType<ManagerKeys>().gameObject);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(0);

@@ -160,6 +160,11 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
         _config.Instance.PlayerSpeed = _initialSpeed;
     }
 
+    public void OnEnterPortal()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void UpdateRotation()
     {
         var dir = new Vector3(Rigidbody.velocity.x, 0, Rigidbody.velocity.z).normalized;
@@ -411,6 +416,8 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
         dashPostPro.enabled = false;
         normalPostPro.enabled = true;
     }
+
+    public DashPlayerFeedback DashPlayerFeedback => _dashFeedback;
 
     private void OnDrawGizmosSelected()
     {

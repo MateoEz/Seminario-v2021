@@ -24,7 +24,7 @@ using UnityEngine.SceneManagement;
     {
         if (other.gameObject.layer == 16)
         {
-
+            AudioMaster.Instance.PlayClip("animationPortal",0.3f);
             fadeIn.GetComponent<Animator>().SetTrigger("fadein");
             FindObjectOfType<MainSongFade>().FadeAudio(true);
             FindObjectOfType<CameraView>().gameObject.AddComponent<AudioListener>();
