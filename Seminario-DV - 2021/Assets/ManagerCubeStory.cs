@@ -68,7 +68,7 @@ public class ManagerCubeStory : MonoBehaviour
                     if (textStory)
                     {
                         //SetActiveStory(PickRandomText());
-                        myAS.PlayOneShot(soundClip,0.3f);
+                        myAS.PlayOneShot(soundClip,0.1f);
                         textStory.gameObject.SetActive(true);
                         if (narrativeClip)
                         {

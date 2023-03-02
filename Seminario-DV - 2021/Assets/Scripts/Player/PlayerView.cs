@@ -306,6 +306,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
     private IEnumerator GetUpAfterKnockedCooldown()
     {
         _lastTimeKnocked = Time.time;
+        SetFootsteps(false);
         while (IsKnocked())
         {
             yield return null;
@@ -322,6 +323,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
     private IEnumerator WaitUntilAnimationsEnds(string stateName, Action todo)
     {
+        SetFootsteps(false);
         while (!_animator.GetCurrentAnimatorStateInfo(0).IsName(stateName))
         {
             yield return null;
@@ -448,6 +450,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
     private void StunnedFeedback()
     {
+        SetFootsteps(false);
         rootsFeedbackCanvas.gameObject.SetActive(true);
     }
 }
