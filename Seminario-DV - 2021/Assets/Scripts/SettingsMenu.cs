@@ -22,6 +22,8 @@ public class SettingsMenu : MonoBehaviour
     {
         backButton.onClick.AddListener(() =>
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             gameObject.SetActive(false);
         });
         
