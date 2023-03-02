@@ -23,4 +23,14 @@ public class BossBehaviour : MonoBehaviour
     {
         lifeSlider.value = _enemy.CurrentHealth;
     }
+
+    public void Scream()
+    {
+        AudioMaster.Instance.PlayClip("BossScream", 0.5f, .5f);
+    }
+
+    public void RocksFalling()
+    {
+        AudioMaster.Instance.PlayClip("BossAnimSounds", 0.2f, .8f);
+    }
 }
