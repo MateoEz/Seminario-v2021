@@ -12,6 +12,7 @@ public class TransitionLvlButton : MonoBehaviour
     public void TransitionLevelButton()
     {
 
+        FindObjectOfType<MainSongFade>().FadeAudio(true);
         fadeImage.GetComponent<Animator>().SetTrigger("fadein");
         GetComponent<Animator>().SetTrigger("play");
         buttonOptions.GetComponent<Animator>().SetTrigger("play");

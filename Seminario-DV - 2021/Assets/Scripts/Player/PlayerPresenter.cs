@@ -222,11 +222,13 @@ public class PlayerPresenter
 
         _view.UpdateMovementAheadAnimation(moveDir.magnitude);
         _view.SetInMovement(false);
-
+        _view.SetFootsteps(false);
         if (h == 0f && v == 0f) return;
 
         _view.SetInMovement(true);
         _view.UpdateRotation();
+        if (_isDashing || !IsGrounded()) return;
+        _view.SetFootsteps(true);
     }
 
     private Vector3 MovementDirFromCameraDir(float v, float h)

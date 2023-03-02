@@ -26,6 +26,8 @@ using UnityEngine.SceneManagement;
         {
 
             fadeIn.GetComponent<Animator>().SetTrigger("fadein");
+            FindObjectOfType<MainSongFade>().FadeAudio(true);
+            FindObjectOfType<CameraView>().gameObject.AddComponent<AudioListener>();
             other.gameObject.SetActive(false);
             StartCoroutine("ChangeScene");
         }

@@ -8,6 +8,7 @@ using Domain.Services;
 using Player;
 using UnityEngine.SceneManagement;
 using UniRx;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using Weapons;
@@ -103,6 +104,9 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
     private float _initialMass;
 
 
+    private AudioSource _footstepsAudioSource;
+
+
     private void Awake()
     {
         PlayerState.Clean();
@@ -119,9 +123,10 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            Debug.Log("toy lvl2");
             ActivateAfterCinematic();
         }
+
+        _footstepsAudioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -181,6 +186,14 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
             AudioMaster.Instance.PlayClip("SaltoPersonaje");
         }
         else return;
+    }
+
+    public void SetFootsteps(bool isMoving)
+    {
+        if (_isKnocked) return;
+
+        float random = Random.Range(0f, 0.16f);
+        _footstepsAudioSource.volume = isMoving ? random : 0;
     }
 
     public void ActivateAfterCinematic()
