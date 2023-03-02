@@ -13,10 +13,12 @@ public class BossFightBehaviour : MonoBehaviour
     [SerializeField] private GameObject bossGolemGameObject;
     [SerializeField] private GameObject playerView;
     [SerializeField] private MeshCollider throneCollider;
+    [SerializeField] private GameObject myCanvas;
     private bool _currentStatus;
     private float _tick;
     private static readonly int BossGameOn = Animator.StringToHash("BossGameOn");
     private const string CHECKPOINT_KEY = "boss_checkpoint";
+
     private void Update()
     {
         if (_currentStatus)
@@ -61,7 +63,8 @@ public class BossFightBehaviour : MonoBehaviour
     private IEnumerator StartAnimationCoroutine()
     {
         var mainSongFade = FindObjectOfType<MainSongFade>();
-        
+
+        myCanvas.SetActive(false);
         bossCamera.SetActive(true);
         playerView.gameObject.SetActive(false);
         mainSongFade.SetFightStatus(true);
@@ -72,6 +75,7 @@ public class BossFightBehaviour : MonoBehaviour
         playerView.gameObject.SetActive(true);
         playerView.gameObject.GetComponent<PlayerView>().DashPlayerFeedback.DisablePlayerFeedback();
         bossCamera.SetActive(false);
+        myCanvas.SetActive(true);
         yield return new WaitForSeconds(1);
         bossGolemGameObject.GetComponent<GolemEnemy>().enabled = true;
         yield return new WaitForSeconds(3);

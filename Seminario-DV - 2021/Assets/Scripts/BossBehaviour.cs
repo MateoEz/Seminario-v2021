@@ -26,11 +26,11 @@ public class BossBehaviour : MonoBehaviour
 
     public void Scream()
     {
-        AudioMaster.Instance.PlayClip("BossScream", 0.5f, .5f);
+        AudioMaster.Instance.PlayClip("BossScream", 0.8f, .8f);
     }
 
     public void RocksFalling()
     {
-        AudioMaster.Instance.PlayClip("BossAnimSounds", 0.2f, .8f);
+        AudioMaster.Instance.PlayClip("BossAnimSounds", 0.7f, .8f);
     }
 }
