@@ -958,7 +958,7 @@ MonoBehaviour:
   - squad
   - playerIsParalyzed
   - dead
-  _speed: 5
+  _speed: 4
   _distanceBehindTank: 4
   _config: {fileID: 1895127695968654696, guid: 11953dcad32d0044fac07a5275fd10ea, type: 3}
   _middleBodyPoint: {fileID: 2778885350901815851}
