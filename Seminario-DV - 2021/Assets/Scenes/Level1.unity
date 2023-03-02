@@ -77621,7 +77621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeInSeconds: 2
   fadeOutSeconds: 4
-  fightPitch: 0
+  fightPitch: 2
 --- !u!1001 &1404640930
 PrefabInstance:
   m_ObjectHideFlags: 0
