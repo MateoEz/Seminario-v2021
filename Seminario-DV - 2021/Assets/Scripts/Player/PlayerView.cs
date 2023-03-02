@@ -399,7 +399,8 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
     private void FinishDash()
     {
-        AudioMaster.Instance.PlayClip("DashFinish",0.15f);
+        AudioMaster.Instance.PlayClip("DashStart",0.15f);
+        //AudioMaster.Instance.PlayClip("DashFinish",0.15f);
         foreach (var obj in _objectsToTurnDownOnDash)
         {
             obj.SetActive(true);
