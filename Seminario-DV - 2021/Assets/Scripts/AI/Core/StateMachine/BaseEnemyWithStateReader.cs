@@ -29,7 +29,7 @@ namespace AI.Core.StateMachine
 
         public abstract void Start();
 
-        public virtual void Update()
+        public virtual void FixedUpdate()
         {
             _stateReader.Update();
         }

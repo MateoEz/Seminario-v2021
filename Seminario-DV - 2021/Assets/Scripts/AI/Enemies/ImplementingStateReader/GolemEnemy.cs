@@ -79,9 +79,9 @@ namespace AI.Enemies.ImplementingStateReader
 
 
         private bool _status = false;
-        public override void Update()
+        public override void FixedUpdate()
         {
-            base.Update();
+            base.FixedUpdate();
             
             if(!_squad || _squad.GetActiveSquadMembers<GolemEnemy>().Count <= 1)
                 SetWorldState("onSquad", false);

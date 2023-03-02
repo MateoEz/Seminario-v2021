@@ -16,16 +16,18 @@ public class ManagerLvl2Cinematic : MonoBehaviour
         timer = 0;
     }
 
-    // Update is called once per frame
+    private bool _alreadyPlayed = false;
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeToChange)
+        if (timer >= timeToChange && !_alreadyPlayed)
             {
-            fadeIn.GetComponent<Animator>().SetTrigger("fadein");
-
-            StartCoroutine("ChangeScene");
+                fadeIn.GetComponent<Animator>().SetTrigger("fadein");
+                StartCoroutine("ChangeScene");
+                
+                AudioMaster.Instance.PlayClip("animationPortal",0.3f);
+                _alreadyPlayed = true;
             }
 
 
