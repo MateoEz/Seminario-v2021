@@ -373,7 +373,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
     
     private void EnterDash()
     {
-        AudioMaster.Instance.PlayClip("DashStart",0.15f);
+        AudioMaster.Instance.PlayClip("DashStart",0.10f,.8f);
         foreach (var obj in _objectsToTurnDownOnDash)
         {
             obj.SetActive(false);
@@ -399,7 +399,7 @@ public class PlayerView : MonoBehaviour, IEntityView, IDamageable, IKnockBackabl
 
     private void FinishDash()
     {
-        AudioMaster.Instance.PlayClip("DashStart",0.15f);
+        AudioMaster.Instance.PlayClip("DashFinish2",0.10f,.8f);
         //AudioMaster.Instance.PlayClip("DashFinish",0.15f);
         foreach (var obj in _objectsToTurnDownOnDash)
         {
