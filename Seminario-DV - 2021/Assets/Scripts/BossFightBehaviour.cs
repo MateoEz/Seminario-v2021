@@ -73,7 +73,7 @@ public class BossFightBehaviour : MonoBehaviour
         yield return new WaitForSeconds(1);
         bossGolemGameObject.transform.position = bossStartPos.transform.position;
         bossGolemGameObject.GetComponent<Animator>().SetTrigger(BossGameOn);
-        bossGolemGameObject.GetComponent<Animator>().ApplyBuiltinRootMotion();
+        bossGolemGameObject.GetComponent<Animator>().applyRootMotion = true;
         yield return new WaitForSeconds(5);
         playerView.gameObject.SetActive(true);
         playerView.gameObject.GetComponent<PlayerView>().DashPlayerFeedback.DisablePlayerFeedback();
