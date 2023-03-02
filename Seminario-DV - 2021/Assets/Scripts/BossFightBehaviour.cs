@@ -14,6 +14,7 @@ public class BossFightBehaviour : MonoBehaviour
     [SerializeField] private GameObject playerView;
     [SerializeField] private MeshCollider throneCollider;
     [SerializeField] private GameObject myCanvas;
+    [SerializeField] private GameObject bossStartPos;
     private bool _currentStatus;
     private float _tick;
     private static readonly int BossGameOn = Animator.StringToHash("BossGameOn");
@@ -70,7 +71,9 @@ public class BossFightBehaviour : MonoBehaviour
         mainSongFade.SetFightStatus(true);
         mainSongFade.BossFighting = true;
         yield return new WaitForSeconds(1);
+        bossGolemGameObject.transform.position = bossStartPos.transform.position;
         bossGolemGameObject.GetComponent<Animator>().SetTrigger(BossGameOn);
+        bossGolemGameObject.GetComponent<Animator>().ApplyBuiltinRootMotion();
         yield return new WaitForSeconds(5);
         playerView.gameObject.SetActive(true);
         playerView.gameObject.GetComponent<PlayerView>().DashPlayerFeedback.DisablePlayerFeedback();
@@ -80,6 +83,5 @@ public class BossFightBehaviour : MonoBehaviour
         bossGolemGameObject.GetComponent<GolemEnemy>().enabled = true;
         yield return new WaitForSeconds(3);
         throneCollider.enabled = true;
-
     }
 }
