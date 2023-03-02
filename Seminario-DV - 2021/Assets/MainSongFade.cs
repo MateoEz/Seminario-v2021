@@ -13,7 +13,7 @@ public class MainSongFade : MonoBehaviour
     private AudioSource _mainSongAudioSource;
     private float _initialVolume;
 
-    
+    private float _squadsCounter = 0;
     public bool InCreepyZone { get; set; }
     private void Start()
     {
@@ -47,7 +47,9 @@ public class MainSongFade : MonoBehaviour
         if (InCreepyZone) return;
         if (status)
         {
-            if (_flag) return; 
+            _squadsCounter++;
+            if (_flag) return;
+            
             _flag = true;
             FadeAudio(true, 1, () =>
             {
@@ -62,8 +64,17 @@ public class MainSongFade : MonoBehaviour
         }
         else
         {
+
+            if (_squadsCounter > 1)
+            {
+                _squadsCounter--;
+                return;
+            }
+            
             if (!_flag) return;
+            
             _flag = false;
+            _squadsCounter--;
             
             FadeAudio(true, 1, () =>
             {

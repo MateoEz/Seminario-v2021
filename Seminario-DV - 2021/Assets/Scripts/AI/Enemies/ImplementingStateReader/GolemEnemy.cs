@@ -47,6 +47,7 @@ namespace AI.Enemies.ImplementingStateReader
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, _colliderOffset);
+            Gizmos.DrawWireSphere(transform.position,_distanceToChase);
         }
         
         public override void Start()
@@ -113,7 +114,7 @@ namespace AI.Enemies.ImplementingStateReader
                 if (!_status)
                 {
                     _status = true;
-                    _squad.Status = false;
+                    //_squad.Status = true;
                 }
                 if(_squad)
                     _squad.NotifySquadMembers("target", PlayerState.Instance.Transform);
@@ -128,6 +129,7 @@ namespace AI.Enemies.ImplementingStateReader
                     Debug.Log("entre aca porque no esta en rango");
                     FindObjectOfType<MainSongFade>().SetFightStatus(false);
                     _status = false;
+                    _squad.Status = false;
                 }
             }
 
