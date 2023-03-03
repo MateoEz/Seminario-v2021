@@ -16,9 +16,11 @@ public class BossBehaviour : MonoBehaviour
     {
         _enemy = GetComponent<GolemEnemy>();
 
+        if (needLifeBar)
+        {
         lifeSlider.maxValue = _enemy.MaxHealth;
         lifeSlider.value = _enemy.MaxHealth;
-        Debug.Log(_enemy.CurrentHealth);
+        }
     }
 
     public void UpdateLifeView()
