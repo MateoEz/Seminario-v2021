@@ -17,10 +17,12 @@ public class BossBehaviour : MonoBehaviour
 
         lifeSlider.maxValue = _enemy.MaxHealth;
         lifeSlider.value = _enemy.MaxHealth;
+        Debug.Log(_enemy.CurrentHealth);
     }
 
     public void UpdateLifeView()
     {
+        Debug.Log("Update");
         lifeSlider.value = _enemy.CurrentHealth;
     }
 

@@ -332,6 +332,7 @@ namespace AI.Enemies.ImplementingStateReader
             attackParticleMain.startColor = Color.yellow;
             attackParticle.gameObject.SetActive(true);
             swordParticle.SetActive(true);
+            if (GetComponent<BossBehaviour>()) return;
             var meshRenderers = eyes.GetComponentsInChildren<MeshRenderer>().ToList();
             foreach (var item in meshRenderers)
             {
@@ -351,6 +352,10 @@ namespace AI.Enemies.ImplementingStateReader
         {
             attackParticle.gameObject.SetActive(false);
             swordParticle.SetActive(false);
+            if (GetComponent<BossBehaviour>())
+            {
+                return;
+            }
             var meshRenderers = eyes.GetComponentsInChildren<MeshRenderer>().ToList();
             foreach (var item in meshRenderers)
             {
@@ -396,6 +401,10 @@ namespace AI.Enemies.ImplementingStateReader
         public override void GetDamaged(int damage)
         {
             base.GetDamaged(damage);
+            if (TryGetComponent(out BossBehaviour boss))
+            {
+                boss.UpdateLifeView();
+            }
             var currentState = _stateReader.CurrentState();
             var attackState = currentState as GenericMeleeAttackState;
             if (attackState != null)
@@ -407,11 +416,7 @@ namespace AI.Enemies.ImplementingStateReader
             _animator.SetTrigger("GetHit");
             AudioMaster.Instance.PlayClip("SwordHitStone",0.04f);
             AudioMaster.Instance.PlayClip("GolemHit");
-
-            if (TryGetComponent(out BossBehaviour boss))
-            {
-                boss.UpdateLifeView();
-            }
+            
             // AudioMaster.Instance.PlayClip("GolemHit");
         }
     }
