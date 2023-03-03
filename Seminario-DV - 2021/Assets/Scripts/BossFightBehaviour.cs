@@ -49,6 +49,9 @@ public class BossFightBehaviour : MonoBehaviour
         if (_currentStatus == false)
         {
             puzzleManager.on = true;
+            var mainSongFade = FindObjectOfType<MainSongFade>();
+            mainSongFade.SetFightStatus(false);
+            mainSongFade.BossFighting = false;
         }
     }
 
