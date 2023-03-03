@@ -19,7 +19,6 @@ public class ActivateTorret : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerView>() || other.gameObject.GetComponent<DashPlayerFeedback>())
         {
             Torreta.activated = false;
-            Debug.Log("sali del rango");
         }
     }
 }

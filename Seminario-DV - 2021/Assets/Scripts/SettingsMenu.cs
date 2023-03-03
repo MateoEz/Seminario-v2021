@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -22,8 +23,11 @@ public class SettingsMenu : MonoBehaviour
     {
         backButton.onClick.AddListener(() =>
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            if (SceneManager.GetActiveScene().name != "Menu")
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
             gameObject.SetActive(false);
         });
         
