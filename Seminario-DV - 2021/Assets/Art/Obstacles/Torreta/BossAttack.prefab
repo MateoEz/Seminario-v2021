@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5968422847668979339}
   - component: {fileID: 2550980424776440900}
   m_Layer: 19
-  m_Name: AtaqueTorreta
+  m_Name: BossAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,6 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -19.851, y: 3.309, z: 1.694}
   m_LocalScale: {x: 4, y: 4, z: 5.412969}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,12 +53,9 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,7 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5968422847668979339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 0
   knockedForce: {x: 0, y: 0, z: 0}
-  myOwner: {fileID: 0}
 --- !u!64 &2550980424776440900
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -110,7 +104,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: 14
   m_Mesh: {fileID: -7727266046724797773, guid: b00f5adb102d9564cbb003e771d23564, type: 3}

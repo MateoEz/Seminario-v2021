@@ -24201,7 +24201,7 @@ GameObject:
   - component: {fileID: 707482407}
   - component: {fileID: 707482409}
   - component: {fileID: 707482408}
-  m_Layer: 16
+  m_Layer: 21
   m_Name: Particle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60239,6 +60239,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 243
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556351352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556351353}
+  m_Layer: 15
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556351353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556351352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2671522407132214596}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1556717344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4495475466097902203, guid: e030c1b3a67629043a9eb32c49cd004b,
@@ -67108,7 +67139,7 @@ PrefabInstance:
     - target: {fileID: 8713379638788609620, guid: d088ce55a70903246aed45a6ba3ae50e,
         type: 3}
       propertyPath: m_Layer
-      value: 16
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8713379638788609620, guid: d088ce55a70903246aed45a6ba3ae50e,
         type: 3}
@@ -89984,6 +90015,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2671522407132214594}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2671522407132214602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922518119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82262f40242c69f4e95774b4e3fc7aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5968422847668979339, guid: c46d224138a45344a94ba882d73214a0, type: 3}
+  cooldown: 4
+  bulletSpawnPoint: {fileID: 1556351353}
 --- !u!4 &2690073445922898651
 Transform:
   m_ObjectHideFlags: 0

@@ -31,7 +31,8 @@ public class TorretaBullet : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
-    {      
+    {
+        if (other.gameObject.GetComponent<DashPlayerFeedback>()) return;
         var playerView = other.gameObject.GetComponent<PlayerView>();
         if (playerView && !playerView.IsKnocked())
         {

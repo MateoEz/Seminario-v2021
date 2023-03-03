@@ -949,7 +949,7 @@ MonoBehaviour:
   _animator: {fileID: 4441431395425302525}
   _playerLayer:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 2162688
   statesInfo:
   - target
   - isTargetInSpellRange

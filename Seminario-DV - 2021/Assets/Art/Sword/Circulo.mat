@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Circulo
   m_Shader: {fileID: 4800000, guid: bac3505d53f0fb14297d1b7c0de4d110, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,11 +20,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
+    m_Ints: []
     m_Floats:
     - _Float2: 0.1
     - _MinTime: 0.18
     - _OffsetTime: 5.63
-    - _Opacity: 0.25
+    - _Opacity: 1
     - _Power: 1
     - _Range1: 4.9
     - _Reduce: 0.2
@@ -36,3 +38,4 @@ Material:
     - _timer: 5.8
     m_Colors:
     - _Color0: {r: 1, g: 0.009225906, b: 0, a: 1}
+  m_BuildTextureStacks: []

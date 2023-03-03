@@ -5167,7 +5167,7 @@ MonoBehaviour:
   _animator: {fileID: 6109922112189798815}
   _playerLayer:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 2162688
   _rigidbody: {fileID: 872457886660478592}
   _explodeMesh: {fileID: 3516766817186076113, guid: 27236991e08d86e4aae2d9fdc31d5d5c,
     type: 3}

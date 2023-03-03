@@ -7,13 +7,7 @@ public class Torreta : MonoBehaviour
 
     [SerializeField]
     private float timeToSpawn;
-
-    [SerializeField]
-    private float waitBetweenRounds;
-
-    [SerializeField]
-    private int ID;
-
+    
     [SerializeField]
     private GameObject circleBullet;
 
