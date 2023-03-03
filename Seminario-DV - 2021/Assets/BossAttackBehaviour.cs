@@ -25,7 +25,7 @@ public class BossAttackBehaviour : MonoBehaviour
         {
             _tick += Time.deltaTime;
         }
-        eyesMaterial.SetVector(EmissionColor,Color.red * _tick);
+        eyesMaterial.SetVector(EmissionColor,Color.red * _tick * 0.3f);
         if (_tick >= cooldown)
         {
             Shoot();
