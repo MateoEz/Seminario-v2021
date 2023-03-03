@@ -18,6 +18,12 @@ public class BossAttackBehaviour : MonoBehaviour
     
     private void Shoot()
     {
-        Instantiate(bullet, bulletSpawnPoint.position,bulletSpawnPoint.rotation);
+        var bulletRef = Instantiate(bullet);
+        bulletRef.transform.position = bulletSpawnPoint.position;
+    }
+
+    private void OnDisable()
+    {
+        Destroy(this);
     }
 }

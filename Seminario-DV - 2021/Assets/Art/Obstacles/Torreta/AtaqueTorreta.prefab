@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4163898843697507164}
   - component: {fileID: 5968422847668979339}
   - component: {fileID: 2550980424776440900}
+  - component: {fileID: 6233009167792735172}
   m_Layer: 19
   m_Name: AtaqueTorreta
   m_TagString: Untagged
@@ -114,3 +115,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7727266046724797773, guid: b00f5adb102d9564cbb003e771d23564, type: 3}
+--- !u!95 &6233009167792735172
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447132329306349440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05789a65e22ae594eb1ff4ad687dea63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

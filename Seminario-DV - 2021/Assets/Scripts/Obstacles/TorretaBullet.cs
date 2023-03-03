@@ -11,17 +11,21 @@ public class TorretaBullet : MonoBehaviour
     private Vector3 knockedForce;
 
     public Transform myOwner;
+    
     void Update()
     {
         Grow();
     }
-    private float maxXValue = 109f;
+    private float maxXValue = 59f;
+    private static readonly int Fade = Animator.StringToHash("Fade");
+
     public void Grow()
     {
         transform.localScale += new Vector3(.5f, .5f, 0.1f);
         if (transform.localScale.x >= maxXValue)
         {
-            Destroy(this.gameObject);
+            GetComponent<Animator>().SetTrigger(Fade);
+            Destroy(this.gameObject,1.5f);
         }
     }
     
