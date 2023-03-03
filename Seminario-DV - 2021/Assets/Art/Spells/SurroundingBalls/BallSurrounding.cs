@@ -138,7 +138,7 @@ public class BallSurrounding : MonoBehaviour
 		transform.forward = targetDir;
 		_rigi.AddForce(targetDir * attackSpeed, ForceMode.Impulse);
 		currentState = SurroundingBallState.Attacking;
-        AudioMaster.Instance.PlayClip("BallImpact", 0.3f, .5f);
+        AudioMaster.Instance.PlayClip("BallImpact", 0.1f, .5f);
         DestroyAfterAttack(1).Subscribe();
 		//transform.position += targetDir * attackSpeed * Time.deltaTime;
 	}
