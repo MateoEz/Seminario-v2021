@@ -29,9 +29,14 @@ namespace AI.Core.StateMachine
 
         public abstract void Start();
 
-        public virtual void FixedUpdate()
+        public virtual void Update()
         {
             _stateReader.Update();
+        }
+
+        public virtual void FixedUpdate()
+        {
+            _stateReader.FixedUpdate();
         }
 
         public void SetWorldState(string key, object value)
