@@ -18,6 +18,7 @@ public class BossFightBehaviour : MonoBehaviour
     [SerializeField] private UnityEvent onAnimStarted;
     [SerializeField] private UnityEvent onAnimEnded;
     [SerializeField] private GameObject bossStartPos;
+    [SerializeField] private FinalPuzzleManager puzzleManager;
     private bool _currentStatus;
     private float _tick;
     private static readonly int BossGameOn = Animator.StringToHash("BossGameOn");
@@ -45,6 +46,10 @@ public class BossFightBehaviour : MonoBehaviour
         }
 
         _currentStatus = status;
+        if (_currentStatus == false)
+        {
+            puzzleManager.on = true;
+        }
     }
 
 
