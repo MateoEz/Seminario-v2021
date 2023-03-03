@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class BossBehaviour : MonoBehaviour
 {
     [SerializeField] private Slider lifeSlider;
+    [SerializeField] bool needLifeBar;
 
     private GolemEnemy _enemy;
 
@@ -23,7 +24,8 @@ public class BossBehaviour : MonoBehaviour
     public void UpdateLifeView()
     {
         Debug.Log("Update");
-        lifeSlider.value = _enemy.CurrentHealth;
+        if(needLifeBar)
+            lifeSlider.value = _enemy.CurrentHealth;
     }
 
     public void Scream()
@@ -33,6 +35,6 @@ public class BossBehaviour : MonoBehaviour
 
     public void RocksFalling()
     {
-        AudioMaster.Instance.PlayClip("BossAnimSounds", 0.7f, .8f);
+        AudioMaster.Instance.PlayClip("BossAnimSounds", 0.8f, .8f);
     }
 }

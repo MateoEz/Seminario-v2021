@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AI.Enemies.ImplementingStateReader;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossFightBehaviour : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class BossFightBehaviour : MonoBehaviour
     [SerializeField] private CameraView cameraView;
     [SerializeField] private GameObject bossCamera;
     [SerializeField] private GameObject bossGolemGameObject;
+    [SerializeField] private GameObject fakeBoss;
     [SerializeField] private GameObject playerView;
     [SerializeField] private MeshCollider throneCollider;
-    [SerializeField] private GameObject myCanvas;
+    [SerializeField] private UnityEvent onAnimStarted;
+    [SerializeField] private UnityEvent onAnimEnded;
     [SerializeField] private GameObject bossStartPos;
     private bool _currentStatus;
     private float _tick;
@@ -49,7 +52,6 @@ public class BossFightBehaviour : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerView>())
         {
-            SetFightStatus(true);
             if (!PlayerPrefs.HasKey(CHECKPOINT_KEY))
             {
                 PlayerPrefs.SetInt(CHECKPOINT_KEY,1);
@@ -65,21 +67,25 @@ public class BossFightBehaviour : MonoBehaviour
     {
         var mainSongFade = FindObjectOfType<MainSongFade>();
 
-        myCanvas.SetActive(false);
+        onAnimStarted?.Invoke();
         bossCamera.SetActive(true);
+        fakeBoss.GetComponent<Animator>().SetTrigger("AnimationBoss");
         playerView.gameObject.SetActive(false);
         mainSongFade.SetFightStatus(true);
         mainSongFade.BossFighting = true;
         yield return new WaitForSeconds(1);
-        bossGolemGameObject.transform.position = bossStartPos.transform.position;
-        bossGolemGameObject.GetComponent<Animator>().SetTrigger(BossGameOn);
-        bossGolemGameObject.GetComponent<Animator>().applyRootMotion = true;
+        //bossGolemGameObject.transform.position = bossStartPos.transform.position;
+        //bossGolemGameObject.GetComponent<Animator>().SetTrigger(BossGameOn);
+        //bossGolemGameObject.GetComponent<Animator>().applyRootMotion = true;
         yield return new WaitForSeconds(5);
+        bossCamera.SetActive(false);
         playerView.gameObject.SetActive(true);
         playerView.gameObject.GetComponent<PlayerView>().DashPlayerFeedback.DisablePlayerFeedback();
-        bossCamera.SetActive(false);
-        myCanvas.SetActive(true);
+        onAnimEnded?.Invoke();
+        SetFightStatus(true);
         yield return new WaitForSeconds(1);
+        fakeBoss.SetActive(false);
+        bossGolemGameObject.SetActive(true);
         bossGolemGameObject.GetComponent<GolemEnemy>().enabled = true;
         yield return new WaitForSeconds(3);
         throneCollider.enabled = true;
