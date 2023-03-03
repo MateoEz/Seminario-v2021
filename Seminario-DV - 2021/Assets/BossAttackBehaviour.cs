@@ -14,19 +14,23 @@ public class BossAttackBehaviour : MonoBehaviour
 
     private float _initialEmission;
     private float _tick;
-    void Start()
-    {
-    }
+    private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
+
+    private bool cooldownEnded = true;
 
     private void Update()
     {
-        _tick += Time.deltaTime;
-
-        eyesMaterial.SetVector("_EmissionColor",Color.red * _tick * 3);
+        if (cooldownEnded)
+        {
+            _tick += Time.deltaTime;
+        }
+        eyesMaterial.SetVector(EmissionColor,Color.red * _tick);
         if (_tick >= cooldown)
         {
             Shoot();
             _tick = 0;
+            cooldownEnded = false;
         }
     }
 
@@ -34,7 +38,14 @@ public class BossAttackBehaviour : MonoBehaviour
     {
         var bulletRef = Instantiate(bullet);
         bulletRef.transform.position = bulletSpawnPoint.position;
-        eyesMaterial.SetVector("_EmissionColor",Color.red * 0.7f);
+        eyesMaterial.SetVector(EmissionColor,Color.red * 0.7f);
+        StartCoroutine(CooldownEndedCoroutine(3));
+    }
+
+    private IEnumerator CooldownEndedCoroutine(int i)
+    {
+        yield return new WaitForSeconds(i);
+        cooldownEnded = true;
     }
 
     private void OnDisable()

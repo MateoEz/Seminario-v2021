@@ -315,6 +315,8 @@ namespace AI.Enemies.ImplementingStateReader
             var currentMat = transform.GetComponentInChildren<SkinnedMeshRenderer>();
             //if (currentMat == null) return;
             currentMat.material = targetingMaterial;
+
+            if (GetComponent<BossBehaviour>()) return;
             sword.GetComponent<MeshRenderer>().material = targetingSwordMaterial;
         }
 
@@ -323,6 +325,7 @@ namespace AI.Enemies.ImplementingStateReader
             var currentMat = transform.GetComponentInChildren<SkinnedMeshRenderer>();
             //if (currentMat == null) return;
             currentMat.material = initialMaterial;
+            if (GetComponent<BossBehaviour>()) return;
             sword.GetComponent<MeshRenderer>().material = swordInitialMaterial;
         }
 
@@ -354,6 +357,7 @@ namespace AI.Enemies.ImplementingStateReader
             swordParticle.SetActive(false);
             if (GetComponent<BossBehaviour>())
             {
+                RefreshCooldownAttack(Time.time);
                 return;
             }
             var meshRenderers = eyes.GetComponentsInChildren<MeshRenderer>().ToList();
