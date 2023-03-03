@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 public class TorretaBullet : MonoBehaviour
@@ -10,7 +11,9 @@ public class TorretaBullet : MonoBehaviour
     [SerializeField]
     private Vector3 knockedForce;
 
+    [SerializeField] private float speed;
     public Transform myOwner;
+    
     
     void Update()
     {
@@ -21,7 +24,7 @@ public class TorretaBullet : MonoBehaviour
 
     public void Grow()
     {
-        transform.localScale += new Vector3(.5f, .5f, 0.1f);
+        transform.localScale += new Vector3(.5f, .5f, 0.1f) * speed * Time.deltaTime;
         if (transform.localScale.x >= maxXValue)
         {
             GetComponent<Animator>().SetTrigger(Fade);
