@@ -98,6 +98,7 @@ public class ManagerKeys : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             keys += 3;
+            playerHasPowerUp = true;
             doorCamera = FindObjectOfType<CameraDoorManager>().gameObject;
         }
     }
