@@ -108,15 +108,17 @@ public class FinalPuzzleManager : MonoBehaviour
     IEnumerator BrightObject(GameObject simbol,float tick)
     {
         yield return new WaitForSeconds(tick);
+        Debug.Log("le hago el brillo a " + simbol.name);
         simbol.GetComponent<Animator>().SetTrigger("BrightTime");
         if (simbol == simbols[simbols.Count-1])
         {
-            yield return new WaitForSeconds(3.5f);
-            activatedSequece = false;
+            yield return new WaitForSeconds(3f);
             foreach (var item in simbols)
             {
                 item.GetComponent<Animator>().SetTrigger("DarkTime");
             }
+            yield return new WaitForSeconds(1f);
+            activatedSequece = false;
         }
     }
 }
