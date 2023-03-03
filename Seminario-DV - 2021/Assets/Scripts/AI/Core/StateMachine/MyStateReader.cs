@@ -21,6 +21,17 @@
             _currentState.Execute();
         }
 
+        public void FixedUpdate()
+        {
+            if (_currentState == null)
+            {
+                _defaultState.Execute();
+                return;
+            }
+
+            _currentState.Execute();
+        }
+
         public void SetState(MyState nextState)
         {
             if (_currentState == null)

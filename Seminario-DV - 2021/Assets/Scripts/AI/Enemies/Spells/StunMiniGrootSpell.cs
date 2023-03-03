@@ -39,9 +39,10 @@ namespace AI.Enemies.Spells
             Debug.Log("Player pos: " + PlayerState.Instance.Transform.position);
             Debug.Log("Spell pos: " + _spellPosition);
             
-            var playerColliders = Physics.OverlapSphere(_spellPosition, 3, 1 << 16).Where( x=> x.GetComponent<IStunable>() != null).ToArray();
+            var playerColliders = Physics.OverlapSphere(_spellPosition, 2, 1 << 16).Where( x=> x.GetComponent<IStunable>() != null).ToArray();
             if (playerColliders.Length > 0)
             {
+                Debug.Log("Stunee");
                 _view.SetPosition(playerColliders[0].transform.position);
                 _stun.Invoke(playerColliders[0].GetComponent<IStunable>(), _config.Instance.StunnedTimeOfMiniGrootSpell);
             }

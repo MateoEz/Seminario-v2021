@@ -112,11 +112,11 @@ namespace AI.Enemies.ImplementingStateReader
 
        
 
-        public override void FixedUpdate()
+        public override void Update()
         {
             if (IsDead) return;
             
-            base.FixedUpdate();
+            base.Update();
 
             SetWorldState("playerIsParalyzed", PlayerState.Instance.IsStunned || PlayerState.Instance.IsKnocked || PlayerState.Instance.IsRecoveringFromKnock);
             
