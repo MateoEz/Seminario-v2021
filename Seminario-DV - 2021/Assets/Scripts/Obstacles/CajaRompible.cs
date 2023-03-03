@@ -45,7 +45,7 @@ public class CajaRompible : MonoBehaviour, ITarget, IDamageable
             rb.AddExplosionForce(explosionForce, transform.position, 10,1, ForceMode.Force);
         }
 
-        if (AchievementsManager.Instance != null)
+        if (AchievementsManager.Instance != null && spheres != null)
         {
             AchievementsManager.Instance.TrackAchievement("destroy_boxes");
         }
